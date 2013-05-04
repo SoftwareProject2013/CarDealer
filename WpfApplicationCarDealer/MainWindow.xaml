@@ -1,0 +1,140 @@
+﻿<Window x:Class="WpfApplicationCarDealer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="538" Width="828" Loaded="Window_Loaded">
+    <Grid>
+        <TabControl Height="499" HorizontalAlignment="Left" Name="tabController" VerticalAlignment="Top" Width="806">
+            <TabItem Header="Customer management" Name="customerManagement">
+                <Grid Height="471" Width="801">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="164*" />
+                        <ColumnDefinition Width="156*" />
+                        <ColumnDefinition Width="481*" />
+                    </Grid.ColumnDefinitions>
+                    <ListBox Height="222" HorizontalAlignment="Left" Margin="50,127,0,0" Name="customersListBox" VerticalAlignment="Top" Width="138" SelectionChanged="customersListBox_SelectionChanged" Grid.ColumnSpan="2" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="141,40,0,0" Name="findCustomerBox" VerticalAlignment="Top" Width="138" Grid.ColumnSpan="2" />
+                    <Button Content="Edit Customer data" Height="23" HorizontalAlignment="Left" Margin="50,366,0,0" Name="editCustomersButton" VerticalAlignment="Top" Width="138" Click="editCustomersButton_Click" Grid.ColumnSpan="2" />
+                    <Label Content="Find customer" Height="28" HorizontalAlignment="Left" Margin="50,38,0,0" Name="label1" VerticalAlignment="Top" />
+                    <Button Content="Add new customer" Height="23" HorizontalAlignment="Left" Margin="10,64,0,0" Name="addNewCustomerButton" VerticalAlignment="Top" Width="120" Click="addNewCustomerButton_Click" Grid.Column="2" />
+                    <RadioButton Content="Private" Height="21" HorizontalAlignment="Left" Margin="98,77,0,0" Name="customerPrivateRadioButton" VerticalAlignment="Top" Click="customerPrivateRadioButton_Click" Width="66" />
+                    <RadioButton Content="Business" Height="32" HorizontalAlignment="Left" Margin="69,77,0,0" Name="customerBusinessRadioButton" VerticalAlignment="Top" Click="customerBusinessRadioButton_Click" Width="81" Grid.Column="1" Checked="customerBusinessRadioButton_Checked" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="10,130,0,0" Name="customerIDTextBox" VerticalAlignment="Top" Width="120" Text="" IsEnabled="False" Grid.Column="2" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="10,168,0,0" Name="customersNameTextBox" VerticalAlignment="Top" Width="120" Text="" Grid.Column="2" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="10,255,0,0" Name="customerAddressTexBox" VerticalAlignment="Top" Width="120" Text="" Grid.Column="2" />
+                    <Button Content="Submit" Height="23" HorizontalAlignment="Left" Margin="10,406,0,0" Name="customerSubmit" VerticalAlignment="Top" Width="120" Click="customerSubmit_Click" Grid.Column="2" />
+                    <Button Content="Erase customer" Height="23" HorizontalAlignment="Left" Margin="50,406,0,0" Name="customerErase" VerticalAlignment="Top" Width="138" Click="customerErase_Click" Grid.ColumnSpan="2" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="10,215,0,0" Name="customerPhoneNumberTextBox" VerticalAlignment="Top" Width="120" Text="" Grid.Column="2" />
+                    <Label Content="Contracts" Height="28" HorizontalAlignment="Left" Margin="193,64,0,0" Name="label2" VerticalAlignment="Top" Width="157" Grid.Column="2" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="10,295,0,0" Name="customerSENSEXoTextBox" VerticalAlignment="Top" Width="120" Text="" Grid.Column="2" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="10,335,0,0" Name="customerFaxOrAgeTextBox" VerticalAlignment="Top" Width="120" Text="" Grid.Column="2" />
+                    <Label Content="CustomerID:" Height="28" HorizontalAlignment="Left" Margin="43,127,0,0" Name="label18" VerticalAlignment="Top" Width="90" Grid.Column="1" />
+                    <Label Content="Customer Name:" Height="28" HorizontalAlignment="Left" Margin="43,168,0,0" Name="CustomerName" VerticalAlignment="Top" Width="107" Grid.Column="1" />
+                    <Label Content="Phone Number:" Height="28" HorizontalAlignment="Left" Margin="43,210,0,0" Name="label20" VerticalAlignment="Top" Width="107" Grid.Column="1" />
+                    <Label Content="Address:" Height="28" HorizontalAlignment="Left" Margin="43,255,0,0" Name="label21" VerticalAlignment="Top" Width="107" Grid.Column="1" />
+                    <Label Content="SE-no:" Height="28" Margin="43,293,29,0" Name="SEorSexLabel" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="Fax:" Height="28" HorizontalAlignment="Left" Margin="43,333,0,0" Name="FaxOrAgeLabel" VerticalAlignment="Top" Width="90" Grid.Column="1" />
+                    <Label Content="Contact person:" Height="28" Margin="43,366,6,0" Name="customerContactPersonLabel" VerticalAlignment="Top" Grid.Column="1" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="10,367,0,0" Name="customerContactPerson" VerticalAlignment="Top" Width="120" Grid.Column="2" />
+                    <DataGrid AutoGenerateColumns="False" Height="200" HorizontalAlignment="Left" Margin="193,105,0,0" Name="clientCarsGridData" VerticalAlignment="Top" Width="215" IsEnabled="True" IsManipulationEnabled="False" IsReadOnly="True" Grid.Column="2" ItemsSource="{Binding}" MouseDoubleClick="clientCarsGridData_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="id" Width="Auto" Binding="{Binding Path=idVehicule}" />
+                            <DataGridTextColumn Header="Model" Width="Auto" Binding="{Binding Path=model}" />
+                            <DataGridTextColumn Header="price" Width="Auto" Binding="{Binding Path=price}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <GroupBox Height="33" HorizontalAlignment="Left" Margin="143,292,0,0" Name="customerSexGroupBox" VerticalAlignment="Top" Width="200" Visibility="Hidden" Grid.Column="1" Grid.ColumnSpan="2">
+                        <Grid Height="32">
+                            <RadioButton Content="Male" Height="16" HorizontalAlignment="Left" Margin="0,3,0,0" Name="customerRadioButtonMale" VerticalAlignment="Top" IsChecked="True" />
+                            <RadioButton Content="Female" Height="16" HorizontalAlignment="Left" Margin="100,3,0,0" Name="customerRadioButtonFemale" VerticalAlignment="Top" />
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Vehicule management" Name="vehiculeManagement">
+                <Grid Height="472" Width="800">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="64*" />
+                        <ColumnDefinition Width="736*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="406,318,0,0" Name="stateTextBox" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                    <ComboBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="406,319,0,0" Name="stateComboBox" VerticalAlignment="Top" Width="120" SelectionChanged="stateComboBox_SelectionChanged" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="305,401,0,0" Name="label8" VerticalAlignment="Top" Content="Price" Grid.Column="1" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="406,401,0,0" Name="priceTextBox" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                    <ListBox Height="100" HorizontalAlignment="Left" Margin="69,87,0,0" Name="vehiculeListBox" VerticalAlignment="Top" Width="138" SelectionChanged="vehiculeListBox_SelectionChanged" Grid.Column="1" />
+                    <RadioButton Content="Truck" Height="16" HorizontalAlignment="Left" Margin="18,208,0,0" Name="truckRadioButton" VerticalAlignment="Top" Click="vehiculeTruckRadiobutton_Click" />
+                    <RadioButton Content="Small car" Height="16" HorizontalAlignment="Left" Margin="18,230,0,0" Name="smallCarRadioButton" VerticalAlignment="Top" Click="vehiculeTruckRadiobutton_Click" Grid.ColumnSpan="2" />
+                    <RadioButton Content="Large car" Height="16" HorizontalAlignment="Left" Margin="18,252,0,0" Name="largeCarRadioButton" VerticalAlignment="Top" Click="vehiculeTruckRadiobutton_Click" Grid.ColumnSpan="2" />
+                    <CheckBox Content="Show avariable only" Height="16" HorizontalAlignment="Left" Margin="69,193,0,0" Name="showAvairiableCheckBox" VerticalAlignment="Top" Checked="showAvairiableCheckBox_Checked" Grid.Column="1" />
+                    <Button Content="Show details" Height="23" HorizontalAlignment="Left" Margin="69,282,0,0" Name="showDetailsButton" VerticalAlignment="Top" Width="138" Grid.Column="1" />
+                    <Button Content="Remove vehicule" Height="23" HorizontalAlignment="Left" Margin="69,319,0,0" Name="removeVehiculeButton" VerticalAlignment="Top" Width="138" Grid.Column="1" Click="removeVehiculeButton_Click" />
+                    <Button Content="Add vehicule" Height="23" Margin="69,245,529,0" Name="addVehiculeButton" VerticalAlignment="Top" Click="addVehiculeButton_Click" Grid.Column="1" />
+                    <Label Content="Register number" Height="28" HorizontalAlignment="Left" Margin="302,87,0,0" Name="label9" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="Brand" Height="28" HorizontalAlignment="Left" Margin="302,121,0,0" Name="label10" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="Color" Height="28" HorizontalAlignment="Left" Margin="305,208,0,0" Name="label11" VerticalAlignment="Top" Grid.Column="1" />
+                    <TextBox Height="23" Margin="406,89,210,0" Name="registerNumberTextBox" VerticalAlignment="Top" Grid.Column="1" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="406,126,0,0" Name="brandTextBox" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="406,205,0,0" Name="colorTextBox" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                    <Label Content="Lenght" Height="28" HorizontalAlignment="Left" Margin="574,87,0,0" Name="label12" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="Weight" Height="28" HorizontalAlignment="Left" Margin="574,0,0,318" Name="label13" VerticalAlignment="Bottom" Grid.Column="1" />
+                    <Label Content="Capacity" Height="28" HorizontalAlignment="Left" Margin="574,160,0,0" Name="label14" VerticalAlignment="Top" Grid.Column="1" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,89,42,0" Name="lenghtTextBox" VerticalAlignment="Top" Width="60" Grid.Column="1" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="634,0,0,321" Name="weightTextBox" VerticalAlignment="Bottom" Width="60" Grid.Column="1" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="634,163,0,0" Name="capacityTextBox" VerticalAlignment="Top" Width="60" Grid.Column="1" />
+                    <Label Content="Rented by" Height="28" HorizontalAlignment="Left" Margin="305,280,0,0" Name="label15" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="State" Height="28" HorizontalAlignment="Left" Margin="305,318,0,0" Name="label16" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="End of rent" Height="28" HorizontalAlignment="Left" Margin="305,360,0,0" Name="label17" VerticalAlignment="Top" Grid.Column="1" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="406,282,0,0" Name="rentedByTextBox" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="406,362,0,0" Name="endOfRentTextBox" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="406,165,0,0" Name="modelTextBox" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                    <Label Content="Model" Height="28" HorizontalAlignment="Left" Margin="305,163,0,0" Name="label19" VerticalAlignment="Top" Grid.Column="1" />
+                    <Button Content="Valid new vehicule" Height="23" HorizontalAlignment="Left" Margin="591,280,0,0" Name="validNewVehiculeButton" VerticalAlignment="Top" Width="112" Click="validNewVehiculeButton_Click" Grid.Column="1" />
+                    <Button Content="Cancel new vehicule" Height="23" HorizontalAlignment="Left" Margin="591,323,0,0" Name="cancelNewVehiculeButton" VerticalAlignment="Top" Width="112" Click="button1_Click_1" Grid.Column="1" />
+                    <TextBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="406,52,0,0" Name="vehiculeIDTextBox" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Vehicule ID" Grid.Column="1" Height="28" HorizontalAlignment="Left" Margin="305,52,0,0" Name="label22" VerticalAlignment="Top" />
+                    <Label Content="Label" Grid.Column="1" Height="28" HorizontalAlignment="Left" Margin="124,41,0,0" Name="mystateLabel" VerticalAlignment="Top" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Lease/Rent vehicule " Name="leaseRentVehicule">
+                <Grid Height="474" Width="799">
+       
+                        <ListBox Height="219" HorizontalAlignment="Left" Margin="35,119,0,0" Name="customerDisplayedListBox" VerticalAlignment="Top" Width="132"  />
+       
+                    <RadioButton Content="Private" Height="16" HorizontalAlignment="Left" Margin="35,70,0,0" Name="privateRadioButton" VerticalAlignment="Top" Checked="privateRadioButton_Checked" />
+                    <RadioButton Content="Business" Height="16" HorizontalAlignment="Left" Margin="35,91,0,0" Name="businessRadioButton" VerticalAlignment="Top" Checked="businessRadioButton_Checked" />
+                    <Label Content="2 - Select a vehicule" Height="28" HorizontalAlignment="Left" Margin="206,35,0,0" Name="label4" VerticalAlignment="Top" />
+
+                    <ListBox Height="219" HorizontalAlignment="Left" Margin="206,119,0,0" Name="vehiculeDisplayedListBox" VerticalAlignment="Top" Width="136" SelectionChanged="vehiculeDisplayedListBox_SelectionChanged_1" />
+
+                    
+                    <DatePicker Height="25" HorizontalAlignment="Left" Margin="629,142,0,0" Name="startDatePicker" VerticalAlignment="Top" Width="115" />
+                    <Label Content="Start rent/Date " Height="28" HorizontalAlignment="Left" Margin="629,119,0,0" Name="label6" VerticalAlignment="Top" />
+                    <DatePicker Height="25" HorizontalAlignment="Left" Margin="629,207,0,0" Name="toDatePicker" VerticalAlignment="Top" Width="115" />
+                    <Label Content="To" Height="28" HorizontalAlignment="Left" Margin="629,183,0,0" Name="label7" VerticalAlignment="Top" />
+                    <Button Content="Submit" Height="23" HorizontalAlignment="Left" Margin="629,263,0,0" Name="submitButton" VerticalAlignment="Top" Width="115" Click="submitButton_Click" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="460,119,0,0" Name="vehiculeIDLRTextBox" VerticalAlignment="Top" Width="120" Text="" IsEnabled="False" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="460,169,0,0" Name="colorLRTextBox" VerticalAlignment="Top" Width="120" Text="" IsEnabled="False" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="460,0,0,236" Name="priceMonthTextBox" VerticalAlignment="Bottom" Width="120" Text="" IsEnabled="False" />
+                    <Label Content="ID vehicule" Height="28" HorizontalAlignment="Left" Margin="367,116,0,0" Name="label18a" VerticalAlignment="Top" />
+                    <Label Content="Color" Height="28" HorizontalAlignment="Left" Margin="367,167,0,0" Name="label19a" VerticalAlignment="Top" />
+                    <Label Content="Price/month" Height="28" HorizontalAlignment="Left" Margin="367,215,0,0" Name="label20a" VerticalAlignment="Top" />
+                    <GroupBox Header="Show cars:" Height="60" HorizontalAlignment="Left" Margin="206,58,0,0" Name="concratcShowSmallLargeGroupBox" VerticalAlignment="Top" Width="136" Visibility="Visible">
+                    <StackPanel>
+                            <CheckBox Content="small" Height="16" Name="contractSmallCheckBox" Checked="contractSmallCheckBox_Checked" />
+                            <CheckBox Content="large" Height="16" Name="contractLargeCheckBox" Checked="contractLargeCheckBox_Checked" />
+                        </StackPanel>
+                    </GroupBox>
+                    <Label Content="1 - Select customer type" Height="28" HorizontalAlignment="Left" Margin="41,35,0,0" Name="label3" VerticalAlignment="Top" />
+                    <DataGrid  AutoGenerateColumns="False" Height="115" HorizontalAlignment="Left" Margin="348,327,0,0" Name="contractManagementContractsDataGrid" VerticalAlignment="Top" Width="441" IsManipulationEnabled="False" IsReadOnly="True" ItemsSource="{Binding}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="contract id" Width="Auto" Binding="{Binding Path=id}" />
+                            <DataGridTextColumn Header="vehicule id" Width="Auto" Binding="{Binding Path=vehicule}" />
+                            <DataGridTextColumn Header="customer name" Width="Auto" Binding="{Binding Path=customer}" />
+                            <DataGridTextColumn Header="startDate" Width="Auto" Binding="{Binding Path=startDate}" />
+                            <DataGridTextColumn Header="endDate" Width="Auto" Binding="{Binding Path=endDate}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
