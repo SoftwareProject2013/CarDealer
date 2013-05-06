@@ -124,7 +124,7 @@
                         </StackPanel>
                     </GroupBox>
                     <Label Content="1 - Select customer type" Height="28" HorizontalAlignment="Left" Margin="41,35,0,0" Name="label3" VerticalAlignment="Top" />
-                    <DataGrid  AutoGenerateColumns="False" Height="115" HorizontalAlignment="Left" Margin="348,327,0,0" Name="contractManagementContractsDataGrid" VerticalAlignment="Top" Width="441" IsManipulationEnabled="False" IsReadOnly="True" ItemsSource="{Binding}">
+                    <DataGrid  AutoGenerateColumns="False" Height="115" HorizontalAlignment="Left" Margin="348,327,0,0" Name="contractManagementContractsDataGrid" VerticalAlignment="Top" Width="441" IsManipulationEnabled="False" IsReadOnly="True" ItemsSource="{Binding}" SelectionChanged="contractManagementContractsDataGrid_SelectionChanged">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="contract id" Width="Auto" Binding="{Binding Path=id}" />
                             <DataGridTextColumn Header="vehicule id" Width="Auto" Binding="{Binding Path=vehicule}" />

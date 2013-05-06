@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplicationCarDealer", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serializable", "Serializable\Serializable.csproj", "{838A1495-2AAE-4B84-8CA4-9496DF76FD2D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarDealerWebApp", "CarDealerWebApp\CarDealerWebApp.csproj", "{442998F4-E666-4EC7-8492-138E26E35B80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{838A1495-2AAE-4B84-8CA4-9496DF76FD2D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{838A1495-2AAE-4B84-8CA4-9496DF76FD2D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{838A1495-2AAE-4B84-8CA4-9496DF76FD2D}.Release|x86.ActiveCfg = Release|Any CPU
+		{442998F4-E666-4EC7-8492-138E26E35B80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{442998F4-E666-4EC7-8492-138E26E35B80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{442998F4-E666-4EC7-8492-138E26E35B80}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{442998F4-E666-4EC7-8492-138E26E35B80}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{442998F4-E666-4EC7-8492-138E26E35B80}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{442998F4-E666-4EC7-8492-138E26E35B80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{442998F4-E666-4EC7-8492-138E26E35B80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{442998F4-E666-4EC7-8492-138E26E35B80}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{442998F4-E666-4EC7-8492-138E26E35B80}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{442998F4-E666-4EC7-8492-138E26E35B80}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

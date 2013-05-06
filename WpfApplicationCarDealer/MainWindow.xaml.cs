@@ -1375,5 +1375,10 @@ namespace WpfApplicationCarDealer
         {
 
         }
+
+        private void contractManagementContractsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

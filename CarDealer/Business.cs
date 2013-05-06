@@ -12,7 +12,7 @@ namespace CarDealer
         public string nameCompany { get; set; }
         public string contactPersorn { get; set; }
         public int se_no { get; set; }
-        public int fax { get; set; }
+        public string fax { get; set; }
         public List<Truck> truckList = new List<Truck>();
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace CarDealer
         /// <summary>
         /// Constructor
         /// </summary>
-        public Business(string adress, string phone, string nameCompany, string contactPersorn, int se_no, int fax)
+        public Business(string adress, string phone, string nameCompany, string contactPersorn, int se_no, string fax)
             : base(adress, phone)
         {
             this.nameCompany = nameCompany;
@@ -39,7 +39,7 @@ namespace CarDealer
 
 
 
-        public void changeFields(string adress, string phone, string nameCompany, string contactPersorn, int se_no, int fax)
+        public void changeFields(string adress, string phone, string nameCompany, string contactPersorn, int se_no, string fax)
         {
             base.changeFields(adress, phone);
             this.nameCompany = nameCompany;

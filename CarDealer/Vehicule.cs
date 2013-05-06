@@ -51,10 +51,10 @@ namespace CarDealer
         /// </summary>
         public enum vehiculeState
         {
-            commission,
-            sold,
-            leased,
             free,
+            commission,
+            leased,
+            sold,
         }
         
     }

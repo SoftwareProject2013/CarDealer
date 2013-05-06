@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Serializable">
-      <HintPath>..\Serializable\obj\Release\Serializable.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -56,6 +53,12 @@
     <Compile Include="Small.cs" />
     <Compile Include="Truck.cs" />
     <Compile Include="Vehicule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Serializable\Serializable.csproj">
+      <Project>{838A1495-2AAE-4B84-8CA4-9496DF76FD2D}</Project>
+      <Name>Serializable</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
